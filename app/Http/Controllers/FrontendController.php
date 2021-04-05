@@ -10,4 +10,9 @@ class FrontendController extends Controller
     {
         return view('frontend.home');
     }
+
+    public function team()
+    {
+        return view('frontend.team');
+    }
 }

@@ -14,4 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [FrontendController::class, 'home']);
+Route::get('/', [FrontendController::class, 'home'])->name('homepage');
+Route::get('/team', [FrontendController::class, 'team'])->name('team');
