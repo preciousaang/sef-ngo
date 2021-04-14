@@ -24,27 +24,17 @@
     <div class="container ">
         <div class="row">
             <div class="col-md-3 col-sm-6 charity">
-                <h2>About Charity</h2>
-                <p>Nam facilisis mauris ut eros feugiat, quis mollis risus eleifend. Nunc finibus nibh accumsan, fringilla purus non, consequa lorem. Sed ullamcorper aliquam.</p>
+                <h2>Our Mandate</h2>
+                <p>Our mandate is to empower the marginalised (especially women and youth) in the Nigerian society and in the process, increase their economic contributions to their communities whilst increasing their knowledge and skills in their preferred/selected field. </p>
             </div>
             <div class="col-md-3 col-sm-6 about-us">
                 <h2>About Us</h2>
                 <ul class="list-unstyled">
-                    <li><a href="index.html">Our History</a></li>
-                    <li><a href="index.html">Our Team</a></li>
-                    <li><a href="index.html">Become a Volunteer</a></li>
-                    <li><a href="index.html">Our Services</a></li>
+                    <li><a href="{{route('about')}}">Our History</a></li>
+                    <li><a href="{{route('team')}}">Our Team</a></li>
                 </ul>
             </div>
-            <div class="col-md-3 col-sm-6 useful-links">
-                <h2>Useful Links</h2>
-                <ul class="list-unstyled">
-                    <li><a href="index.html">Sponsor a Child</a></li>
-                    <li><a href="index.html">Event Calander</a></li>
-                    <li><a href="index.html">Our Donors</a></li>
-                    <li><a href="index.html">Our Shop</a></li>
-                </ul>
-            </div>
+            
             <div class="col-md-3 col-sm-6 contact">
                 <h2>Contact Us</h2>
                 <div class="contact-details">
@@ -63,7 +53,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                <p>With <i class="fa fa-heart orange"></i>        by Wow Themes © 2015. All Rights Reserved.</p>
+                <p>Designed By AGZ &copy; {{date('Y')}}. All Rights Reserved</p>
             </div>
         </div>
     </div>
