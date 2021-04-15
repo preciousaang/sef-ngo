@@ -17,19 +17,45 @@
             <h2>Send Us A Message</h2>
             <div class="row mt30">
               <div class="col-md-8">
-                <form action="contact-us.html#">
+                @include('includes.partials')
+                <form action="{{route('contact-us')}}" method="POST">
+                  @csrf
                   <div class="fl-name row">
-                    <div class="col-md-6">
-                      <input type="text" class="form-control" value="First Name">
+                    <div class="col-md-6 @if($errors->has('first_name'))has-error @endif">
+                      <input type="text" class="form-control" name="first_name" placeholder="First Name" value="{{old('first_name')}}">
+                      @if($errors->has('first_name'))
+                      @foreach($errors->get('first_name') as $error)
+                        <span class="help-block">{{$error}}</span>
+                      @endforeach
+                    @endif
                     </div>
-                    <div class="col-md-6">
-                      <input type="text" class="form-control" value="Last Name">
+                    <div class="col-md-6 @if($errors->has('last_name'))has-error @endif">
+                      <input type="text" name="last_name" class="form-control" placeholder="Last Name" value="{{old('last_name')}}">
+                      @if($errors->has('last_name'))
+                        @foreach($errors->get('last_name') as $error)
+                          <span class="help-block">{{$error}}</span>
+                        @endforeach
+                      @endif
                     </div>
                   </div>
-                <input type="text" class="form-control" value="Subject">
-                <textarea name="your-message" id="message" rows="10" class="form-control">Message</textarea>
+                  <div class=" @if($errors->has('subject'))has-error @endif">
+                    <input name="subject" type="text" class="form-control" placeholder="Subject" value="{{old('subject')}}">
+                    @if($errors->has('subject'))
+                    @foreach($errors->get('subject') as $error)
+                      <span class="help-block">{{$error}}</span>
+                    @endforeach
+                  @endif
+                  </div>
+                  <div class=" @if($errors->has('body'))has-error @endif">
+                  <textarea name="body" id="message" placeholder="Message" rows="10" class="form-control">{{old('body')}}</textarea>
+                  @if($errors->has('body'))
+                  @foreach($errors->get('body') as $error)
+                    <span class="help-block">{{$error}}</span>
+                  @endforeach
+                @endif
+                  </div>
                 <div class="mt30">
-                  <a href="contact-us.html#" class="btn-orange">Submit</a>
+                  <button type="submit" class="btn-orange">Submit</a>
                 </div>
                 </form>
               </div>
@@ -40,7 +66,7 @@
                       <i class="fa fa-map-marker orange"></i> <span class="text-bold"> Address:</span>
                     </div>
                     <div class="col-md-7">
-                      <span>1465 Still Street Cairo, OH 45820</span>
+                      <span>17, Akeem Odumosu Crescent, Magodo GRA, Lagos</span>
                     </div>
                   </div>
                 </div>
@@ -50,7 +76,7 @@
                       <i> <img src="img/envelope.png" alt=""></i> <span class="text-bold"> E-mail:</span>
                     </div>
                     <div class="col-md-7">
-                      <span>info@charity.com</span>
+                      <span>info@sefng.org</span>
                     </div>
                   </div>
                 </div>
@@ -60,7 +86,7 @@
                       <i class="fa fa-phone orange"></i> <span class="text-bold"> Phone:</span>
                     </div>
                     <div class="col-md-7">
-                      <span>(012) 345-6789</span>
+                      <span>08060334996</span>
                     </div>
                   </div>
                 </div>
@@ -71,5 +97,4 @@
       </div>
     </div>
   </section>
-  
 @endsection

@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ResetPasswordController;
 use App\Http\Livewire\Admin\Images\Edit;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -23,18 +24,30 @@ Route::get('/team', [FrontendController::class, 'team'])->name('team');
 Route::get('/about', [FrontendController::class, 'about'])->name('about');
 Route::get('/gallery', [FrontendController::class, 'gallery'])->name('gallery');
 Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
+Route::post('/contact', [FrontendController::class, 'contactUs'])->name('contact-us');
+Route::post('/newsletter', [FrontendController::class, 'joinNewsLetter'])->name('join-newsletter');
+Route::get('/unsubscribe', [FrontendController::class, 'unsubscribeNewsLetter'])->name('unsubscribe');
 Route::get('/news', [FrontendController::class, 'news'])->name('news');
 Route::get('/news/{slug}', [FrontendController::class, 'newsDetail'])->name('news-detail');
 
+
+
 Route::middleware('guest')->group(function () {
     Route::get('/login', [LoginController::class, 'form'])->name('login');
+    Route::get('/forgot-password', [ResetPasswordController::class, 'form'])->name('password.request');
+    Route::post('/forgot-password', [ResetPasswordController::class, 'emailLink'])->name('password.email');
+    Route::get('/reset-password/{token}', [ResetPasswordController::class, 'resetForm'])->name('password.reset');
+    Route::post('/reset-password', [ResetPasswordController::class, 'resetPassword'])->name('password.update');
 });
 
 Route::middleware('auth')->group(function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
     Route::any('/logout', [DashboardController::class, 'logout'])->name('logout');
     Route::prefix('admin')->group(function () {
+        Route::get('/change-password', [DashboardController::class, 'changePasswordForm'])->name('change-password-form');
+        Route::post('/change-password', [DashboardController::class, 'changePassword'])->name('change-password');
         Route::get('team', [DashboardController::class, 'team'])->name('admin-team');
         Route::get('team/{id}/edit', [DashboardController::class, 'editTeam'])->name('admin-team-edit');
         Route::get('team/{id}/delete', [DashboardController::class, 'deleteTeam'])->name('admin-team-delete');
@@ -65,5 +78,8 @@ Route::middleware('auth')->group(function () {
         Route::patch('news/{id}/edit', [DashboardController::class, 'updateNews'])->name('admin-update-news');
 
         Route::get('/news/{id}/delete', [DashboardController::class, 'deleteNews'])->name('admin-news-delete');
+        Route::get('/mailable', function () {
+            return new App\Mail\NewsLetter(App\Models\News::find(1), 'pr@mail.com');
+        });
     });
 });

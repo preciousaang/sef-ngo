@@ -37,6 +37,8 @@
                         <div class="row">
                             <div class="col-sm-9 offset-sm-3">
                                 <button type="submit" class="btn btn-sm btn-outline-secondary">Login</button>
+                                &nbsp;&nbsp;
+                                <a href="{{route('password.request')}}" class="text-info">Forgot Password?</a>
                             </div>
                         </div>
                        

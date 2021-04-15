@@ -4,7 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>NGO</title>
+    <title>@yield('title', 'Welcome') | SEF</title>
+    <meta property="og:url" content="{{url()->current()}}">
+        @section('meta')
+            <meta name="description" content="SEF is a non-governmental organisation founded in 2012, and since its inception SEF has been at the sharp point of demanding, ambitious and complex initiatives aimed at strengthening and optimising the agricultural value chain across Nigeria.">
+            <meta name="keywords" content="NGO, Non-Govermental Organization, SEF">
+            <meta name="author" content="SEF">
+            <meta property="og:title" content="SEF">
+            <meta property="og:description" content="SEF is a non-governmental organisation founded in 2012, and since its inception SEF has been at the sharp point of demanding, ambitious and complex initiatives aimed at strengthening and optimising the agricultural value chain across Nigeria.">
+            <meta property="og:image" content="{{asset('img/logo.png')}}">
+         @show
+    
+   
+    
     <!-- Core CSS-->
 	<link rel="stylesheet" href="{{asset('assets/css/bootstrap.css')}}">
 	<link rel="stylesheet" href="{{asset('assets/css/font-awesome.css')}}">
@@ -16,6 +28,12 @@
 	<link rel="stylesheet" href="{{asset('assets/css/animate.css')}}">
 	<link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
 	<link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
+    {{-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script>
+        AOS.init();
+    </script> --}}
+    <link rel="icon" href="{{asset('img/logo.png')}}">
 <body>
 @include('includes.nav')
 
@@ -39,11 +57,11 @@
                 <h2>Contact Us</h2>
                 <div class="contact-details">
                     <span><i class="fa fa-map-marker white"></i></span>
-                    <p>199 Boundariesen Street Jacksonville, FL 32208</p>
+                    <p>17, Akeem Odumosu Crescent, Magodo GRA, Lagos</p>
                     <span><i class="fa fa-phone white"></i></span>
-                    <p>(012) 345 - 6789</p>
+                    <p>08060334996</p>
                     <span><small><i class="fa fa-envelope white"></i></small></span>
-                    <p>contact@charityattyia.com</p>
+                    <p>info@sefng.org</p>
                 </div>
             </div>
         </div>

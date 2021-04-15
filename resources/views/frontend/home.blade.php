@@ -34,11 +34,11 @@
                                   data-easing="easeOutExpo" style="bottom:0; margin-bottom: 50px;">
                                   <div class="slider-text text-center">
                                       
-                                      <div class="slider-social">
+                                      {{-- <div class="slider-social">
                                           <a href="index.html"><i class="fa fa-facebook"></i></a>
                                           <a href="index.html"><i class="fa fa-twitter"></i></a>
                                           <a href="index.html"><i class="fa fa-instagram"></i></a>
-                                      </div>
+                                      </div> --}}
                                       
                                   </div>
                               </div>
@@ -120,61 +120,32 @@
       </div>
   </div>
   <section>
+    <div class="our-work">
+        <h1 class="text-center animated animated.hinge slideInUp">Latest Projects</h1>
+        <hr>
+    </div>
           <div id="projects-help" class="wow slideInDown">
+              
+              @foreach($projects as $project)
               <div class="item">
                   <div class="row">
                       <div class="col-md-7">
-                          <img class="img-responsive" src="img/project-girl.jpg" alt="">
+                          <img class="img-responsive" src="{{asset('storage/uploads/'.$project->image_url)}}" alt="">
                       </div>
                       <div class="col-md-5">
                           <div class="project-description">
-                              <h1>Project 1</h1>
+                              <h1 class="animated fadeInUp slideInUp">{{$project->title}}</h1>
                               <hr class="small">
   
-                              <h3>Caring For Nigeria.</h3>
-                              <p>The United Republic of Tanzania is an emerging economy with high potential. But despite impressive growth in its gross domestic product (GDP) over the past decade, it remains one of the world's poorest countries in terms of per capita income.</p>
+                              <h3>{{$project->subtitle}}</h3>
+                              <p>{{$project->detail}}</p>
   
-                              <a class="btn btn-orange" href="index.html">Read More</a>
+                              {{-- <a class="btn btn-orange" href="index.html">Read More</a> --}}
                           </div>
                       </div>
                   </div>
               </div>
-              <div class="item">
-                  <div class="row">
-                      <div class="col-md-7">
-                          <img class="img-responsive" src="img/project-girl.jpg" alt="">
-                      </div>
-                      <div class="col-md-5">
-                          <div class="project-description">
-                              <h1>Project 1</h1>
-                              <hr class="small">
-  
-                              <h3>Caring For Nigeria.</h3>
-                              <p>The United Republic of Tanzania is an emerging economy with high potential. But despite impressive growth in its gross domestic product (GDP) over the past decade, it remains one of the world's poorest countries in terms of per capita income.</p>
-  
-                              <a class="btn btn-orange" href="index.html">Read More</a>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="item">
-                  <div class="row">
-                      <div class="col-md-7">
-                          <img class="img-responsive" src="img/project-girl.jpg" alt="">
-                      </div>
-                      <div class="col-md-5">
-                          <div class="project-description">
-                              <h1>Project 1</h1>
-                              <hr class="small">
-  
-                              <h3>Caring For Nigeria.</h3>
-                              <p>The United Republic of Tanzania is an emerging economy with high potential. But despite impressive growth in its gross domestic product (GDP) over the past decade, it remains one of the world's poorest countries in terms of per capita income.</p>
-  
-                              <a class="btn btn-orange" href="index.html">Read More</a>
-                          </div>
-                      </div>
-                  </div>
-              </div>
+             @endforeach
           </div>
   </section>
   <section>
@@ -209,59 +180,34 @@
       <div class="container wow fadeIn">
           <div class="row">
               <div class="col-md-12 our-work">
-                  <h1>what we do</h1>
+                  <h1>Projects</h1>
                   <hr>
               </div>
           </div>
           <div class="row">
+              @foreach($projects as $project)
               <div class="col-md-4 col-sm-6 our-work-main">
                   <div class="our-work-inner">
-                      <img class="img-responsive" src="img/environment.jpg" alt="">
+                      <img class="img-responsive" src="{{asset('storage/uploads/'.$project->image_url)}}" alt="">
                       <div class="our-work-hover">
                           <div class="our-work-hover-text text-uppercase">
-                              <h4>Environment</h4>
+                              <h4>{{$project->title}}</h4>
                           </div>
                       </div>
                   </div>
                   <div class="our-work-content">
-                      <p>Fuel-efficient cookstoves & forest conservation, fruit tree planting, etc.</p>
-                      <span>23 Projects</span><a class="btn btn-orange pull-right" href="index.html">View Projects</a>
+                      <p>{{$project->detail}}</p>
+                      {{-- <span>23 Projects</span> --}}
+                      {{-- <a class="btn btn-orange pull-right" href="index.html">View Projects</a> --}}
                   </div>
               </div>
-              <div class="col-md-4 col-sm-6 our-work-main">
-                  <div class="our-work-inner">
-                      <img  class="img-responsive" src="img/education.jpg" alt="">
-                      <div class="our-work-hover">
-                          <div class="our-work-hover-text text-uppercase">
-                              <h4>Education</h4>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="our-work-content">
-                      <p>Pre-schools, primary schools, secondary schools and adult literacy.</p>
-                      <span>18 Projects</span><a class="btn btn-orange pull-right" href="index.html">View Projects</a>
-                  </div>
-              </div>
-              <div class="col-md-4 col-sm-6 our-work-main">
-                  <div class="our-work-inner">
-                      <img  class="img-responsive" src="img/healthcare.jpg" alt="">
-                      <div class="our-work-hover">
-                          <div class="our-work-hover-text text-uppercase">
-                              <h4>Healthcare</h4>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="our-work-content">
-                      <p>Community dispensary and rural great healthy projects.</p>
-                      <span>28 Projects</span><a class="btn btn-orange pull-right" href="index.html">View Projects</a>
-                  </div>
-              </div>
+              @endforeach
           </div>
       </div>
   </section>
  
  
-  <section>
+  {{-- <section>
       <div class="container">
           <div class="row">
               <div class="col-md-12 gallery-filter">
@@ -318,10 +264,31 @@
               </div>
           </div>
       </div>
-  </section>
+  </section> --}}
   <section>
-      <div id="find-us" class="wow slideInDown">
+      <div id="find-us" class="wow slideInDown mb10">
           <div class="item">
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="find-img">
+                          <img src="img/find-us.jpg" alt="">
+                      </div>
+                      <div class="find-text text-center">
+                          <div class="spot-heading">
+                              <h1>Where to find us</h1>
+                              <h2>Locate Us</h2>
+                              <p>The address is 17, Akeem Odumosu Crescent, Magodo GRA, Lagos</p>
+                          </div>
+                          
+                      </div>
+                      {{-- <div class="find-quote">
+                          <p>“Loneliness and the feeling of being unwanted is the most terrible poverty.”</p>
+                          <p class="author">- A. P. J. Abdul Kalam</p>
+                      </div> --}}
+                  </div>
+              </div>
+          </div>
+          {{-- <div class="item">
               <div class="row">
                   <div class="col-md-12">
                       <div class="find-img">
@@ -366,30 +333,7 @@
                       </div>
                   </div>
               </div>
-          </div>
-          <div class="item">
-              <div class="row">
-                  <div class="col-md-12">
-                      <div class="find-img">
-                          <img src="img/find-us.jpg" alt="">
-                      </div>
-                      <div class="find-text text-center">
-                          <div class="spot-heading">
-                              <h1>Where to find us</h1>
-                              <h2>Locate Us.</h2>
-                          </div>
-                          <div class="find-details">
-                              <p>	Or contact us directly:</p>
-                              <a class="btn btn-white" href="index.html">Contact Us</a>
-                          </div>
-                      </div>
-                      <div class="find-quote">
-                          <p>“Loneliness and the feeling of being unwanted is the most terrible poverty.”</p>
-                          <p class="author">- A. P. J. Abdul Kalam</p>
-                      </div>
-                  </div>
-              </div>
-          </div>
+          </div> --}}
       </div>
   </section>
   <section class="no-padding no-margin">
@@ -404,8 +348,10 @@
                       <h1>Join Our Newsletter</h1>
                       <hr>
                       <p>Africa’s Summer Newsletter 2015 is now ready for you to download and read. It’s got news about our projects in Malawi and a recent visit by two of our wonderful donors.</p>
-                      <form action="index.html#">
-                          <input type="text" class="form-control" value="Your Email Address">
+                      @include('includes.partials')
+                      <form action="{{route('join-newsletter')}}" method="POST">
+                        @csrf
+                          <input required  type="email" class="form-control mb10" value="{{old('email')}}" name="email" placeholder="Your Email Address">
                           <input class="btn btn-orange" type="submit" value="Subscribe">
                       </form>
                   </div>
@@ -413,83 +359,7 @@
           </div>
       </div>
   </section>
-  <section>
-      <div class="team-area wow slideInDown">
-          <div class="row">
-              <div class="col-md-4 col-sm-6 no-padding team-member">
-                  <div class="team-img">
-                      <img src="img/our-team/kris.jpg" alt="">
-                      <div class="overlay"></div>
-                  </div>
-                  <div class="team-text">
-                      <h1>Kris G. Torres</h1>
-                      <h5>- Clothing Help</h5>
-                  </div>
-                  
-              </div>
-              <div class="col-md-4 col-sm-6 no-padding team-member">
-                  <div class="team-img">
-                      <img src="img/our-team/william.jpg" alt="">
-                      <div class="overlay"></div>
-                  </div>
-                  <div class="team-text">
-                      <h1>William Andre</h1>
-                      <h5>- Dentistry Help</h5>
-                  </div>
-                  
-              </div>
-              <div class="col-md-4 col-sm-6 no-padding team-member active">
-                  <div class="team-img">
-                      <img src="img/our-team/mari.jpg" alt="">
-                      <div class="overlay"></div>
-                  </div>
-                  <div class="team-text">
-                      <h1>Mari A. Ward</h1>
-                      <h5>- Toys Help</h5>
-                  </div>
-                  <div class="member-hover-top">
-                      <h1>generous donors</h1>
-                      <hr>
-                      <p>See all people who help us day by day by donating stuff for our poor children. </p>
-                      <a href="index.html" class="btn btn-orange">All Donors</a>
-                  </div>
-              </div>
-              <div class="clearfix visible-md-block"></div>
-              <div class="col-md-4 col-sm-6 no-padding team-member">
-                  <div class="team-img">
-                      <img src="img/our-team/melissa.jpg" alt="">
-                      <div class="overlay"></div>
-                  </div>
-                  <div class="team-text">
-                      <h1>Melissa H. Ness</h1>
-                      <h5>- Water Help</h5>
-                  </div>
-                  
-              </div>
-              <div class="col-md-4 col-sm-6 no-padding team-member">
-                  <div class="team-img">
-                      <img src="img/our-team/vera.jpg" alt="">
-                      <div class="overlay"></div>
-                  </div>
-                  <div class="team-text">
-                      <h1>Vera J. Gent</h1>
-                      <h5>- Seeds Help</h5>
-                  </div>
-                  
-              </div>
-              <div class="col-md-4 col-sm-6 no-padding team-member">
-                  <div class="team-img">
-                      <img src="img/our-team/kris.jpg" alt="">
-                  </div>
-                  <div class="team-text">
-                      <h1>Kris G. Torres</h1>
-                      <h5>- Clothing Help</h5>
-                  </div>
-                  
-              </div>
-          </div>
-      </div>
-  </section>
+  
   <section>
       <div class="container wow slideInDown">
           <div class="row">
@@ -499,123 +369,34 @@
               </div>
           </div>
           <div class="blog-area">
+              @forelse($news as $post)
               <div class="row">
                   <div class="col-md-4 col-sm-6 blog-post">
-                      <h4 class="orange">Africa  /  Kids  /  Water</h4>
-                      <h2>Getting Ready For Getting Some Warm & Nice Water</h2>
+                      
+                      <h2>{{$post->title}}</h2>
                       <div class="blog-img">
-                          <img class="img-responsive" src="img/blog/blog1.jpg" alt="">
+                          <img class="img-responsive img-rounded" src="{{asset('storage/uploads/'.$post->image_url)}}" alt="{{$post->title}}">
                           <div class="blog-img-hover text-center">
-                              <a class="btn btn-orange" href="index.html">Read Article</a>
+                              <a class="btn btn-orange" href="{{route('news-detail', $post->slug)}}">Read Article</a>
                           </div>
                       </div>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ornare tempor iaculis [...]</p>
+                      <p><?= substr(strip_tags($post->body), 0, 50); ?></p>
                       <div class="post-footer">
                           <div class="post-author pull-left">
                               <img src="img/blog/kate.jpg" alt="">
-                              <span>Kate Dawson</span>
+                              <span>{{$post->user->name}}</span>
                           </div>
                           <div class="post-time pull-right orange">
-                              <i class="fa fa-clock-o"></i> <span> August 12, 2015</span>
+                              <i class="fa fa-clock-o"></i> <span> {{$post->created_at->diffForHumans()}}</span>
                           </div>
                       </div>
                       <div class="clearfix"></div>
                   </div>
-                  
-                  <div class="col-md-4 col-sm-6 blog-post">
-                      <h4 class="orange">Seeds  /  Food</h4>
-                      <h2>Ylang-ylang Harvest For 25 People & Their Families</h2>
-                      <div class="blog-img">
-                          <img class="img-responsive" src="img/blog/blog2.jpg" alt="">
-                          <div class="blog-img-hover text-center">
-                              <a class="btn btn-orange" href="index.html">Read Article</a>
-                          </div>
-                      </div>
-                      <p>Vestibulum faucibus tempor leo id viverra. Praesent cre vulputate, urna in malesuada egesta [...]</p>
-                      <div class="post-footer">
-                          <div class="post-author pull-left">
-                              <img src="img/blog/jessica.jpg" alt="">
-                              <span>Jessica Moe</span>
-                          </div>
-                          <div class="post-time pull-right orange">
-                              <i class="fa fa-clock-o"></i> <span> August 11, 2015</span>
-                          </div>
-                      </div>
-                      <div class="clearfix"></div>
-                  </div>
-                  
-                  <div class="col-md-4 col-sm-6 blog-post">
-                      <h4 class="orange">Women  /  Poverty</h4>
-                      <h2>African Women Are Also Very Kind & Beautiful</h2>
-                      <div class="blog-img">
-                          <img class="img-responsive" src="img/blog/blog3.jpg" alt="">
-                          <div class="blog-img-hover text-center">
-                              <a class="btn btn-orange" href="index.html">Read Article</a>
-                          </div>
-                      </div>
-                      <p>Ut dapibus imperdiet eros at molestie. Integer congue eget massa sed eleifend. Nullam semper [...]</p>
-                      <div class="post-footer">
-                          <div class="post-author pull-left">
-                              <img src="img/blog/dana.jpg" alt="">
-                              <span>Dana Brown</span>
-                          </div>
-                          <div class="post-time pull-right orange">
-                              <i class="fa fa-clock-o"></i> <span> August 12, 2015</span>
-                          </div>
-                      </div>
-                      <div class="clearfix"></div>
-                  </div>
-                      
+                @empty
+                @endforelse                      
               </div>
           </div>
       </div>
   </section>
-  <section>
-      <div class="twitter-feeds wow slideInDown">
-          <div class="container">
-              <div id="twitter-slider">
-                  <div class="item">
-                      <div class="row">
-                          <div class="col-md-11">
-                              <div class="tweet-time pull-left white">
-                                  <i class="fa fa-twitter"></i><span>2 days ago</span>
-                              </div>
-                              <div class="twitter-tweet pull-right white">	
-                                  <p class="white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel felis a tellus dignissim laoreet. Mauris dapibus ut elit quis pulvinar. </p>
-                              </div>
-                          </div>
-                          <div class="col-md-1"></div>
-                      </div>
-                  </div>
-                  <div class="item">
-                      <div class="row">
-                          <div class="col-md-11">
-                              <div class="tweet-time pull-left white">
-                                  <i class="fa fa-twitter"></i><span>2 days ago</span>
-                              </div>
-                              <div class="twitter-tweet pull-right white">	
-                                  <p class="white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel felis a tellus dignissim laoreet. Mauris dapibus ut elit quis pulvinar. </p>
-                              </div>
-                          </div>
-                          <div class="col-md-1"></div>
-                      </div>
-                  </div>
-                  <div class="item">
-                      <div class="row">
-                          <div class="col-md-11">
-                              <div class="tweet-time pull-left white">
-                                  <i class="fa fa-twitter"></i><span>2 days ago</span>
-                              </div>
-                              <div class="twitter-tweet pull-right white">	
-                                  <p class="white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel felis a tellus dignissim laoreet. Mauris dapibus ut elit quis pulvinar. </p>
-                              </div>
-                          </div>
-                          <div class="col-md-1"></div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
-  
+  <hr class="mb30">  
  @endsection

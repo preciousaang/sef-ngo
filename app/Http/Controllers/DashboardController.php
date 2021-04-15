@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\NewsCreated;
 use App\Models\Gallery;
 use App\Models\Image;
 use App\Models\News;
@@ -10,7 +11,7 @@ use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Team;
-
+use App\Models\User;
 
 class DashboardController extends Controller
 {
@@ -177,11 +178,12 @@ class DashboardController extends Controller
             'image' => 'required|image',
             'body' => 'required|min:20',
         ]);
-        auth()->user()->news()->create([
+        $news = auth()->user()->news()->create([
             'title' => $request->post('title'),
             'image_url' => basename($request->file('image')->store('public/uploads')),
             'body' => $request->post('body')
         ]);
+        NewsCreated::dispatch($news);
         session()->flash('success', 'News created successfully');
         return redirect()->route('admin-news');
     }
@@ -217,5 +219,22 @@ class DashboardController extends Controller
         $news = News::findOrFail($id);
         $news->delete();
         return redirect()->back()->with('message', 'Deleted Successfully');
+    }
+
+    public function changePasswordForm()
+    {
+        return view('admin.change-password');
+    }
+
+    public function changePassword(Request $request)
+    {
+        $request->validate([
+            'old_password' => 'password',
+            'password' => 'required|string|min:6|max:50|confirmed',
+        ]);
+        $user = User::find(auth()->id());
+        $user->password = bcrypt($request->password);
+        $user->save();
+        return redirect()->back()->with('message', 'Password changed successfully');
     }
 }

@@ -2,23 +2,35 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactUsMail;
 use App\Models\Gallery;
 use App\Models\Image;
 use App\Models\News;
 use App\Models\Partner;
+use App\Models\Project;
+use App\Models\Subscriber;
 use Illuminate\Http\Request;
 use App\Models\Team;
+use Illuminate\Support\Facades\Mail;
 
 class FrontendController extends Controller
 {
     public function home()
     {
-        return view('frontend.home');
+        $news = News::latest()->limit(3)->get();
+        $projects = Project::latest()->limit(15)->get();
+        return view('frontend.home', [
+            'news' => $news,
+            'projects' => $projects,
+            'metas' => [
+                'dd' => 'dd'
+            ]
+        ]);
     }
 
     public function team()
     {
-        $teams = Team::orderBy('position')->get();
+        $teams = Team::whereActive(1)->orderBy('position')->get();
         return view('frontend.team', [
             'teams' => $teams
         ]);
@@ -26,7 +38,7 @@ class FrontendController extends Controller
 
     public function about()
     {
-        $partners = Partner::orderBy('position')->get();
+        $partners = Partner::whereActive(1)->orderBy('position')->get();
         return view('frontend.about', [
             'partners' => $partners
         ]);
@@ -61,5 +73,45 @@ class FrontendController extends Controller
     public function contact()
     {
         return view('frontend.contact');
+    }
+
+    public function contactUs(Request $request)
+    {
+        $request->validate([
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'subject' => 'required|string|max:100',
+            'body' => 'required'
+        ]);
+        Mail::to('info@sefng.org')
+            ->send(
+                new ContactUsMail(
+                    $request->post('subject'),
+                    $request->post('body'),
+                    $request->post('first_name'),
+                    $request->post('last_name')
+                )
+            );
+        return redirect()->back()->with('success', 'Mail sent successfully');
+    }
+
+    public function joinNewsLetter(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email|unique:subscribers'
+        ]);
+        Subscriber::create([
+            'email' => $request->post('email')
+        ]);
+
+        return redirect()->back()->with('success', 'You have successfully subscribed to our newsletter');
+    }
+
+    public function unsubscribeNewsLetter(Request $request)
+    {
+        $subscriber = Subscriber::whereEmail($request->get('subscriber'))->firstOrFail();
+        $subscriber->delete();
+        session()->flash('message', 'You have unsubscribed');
+        return redirect()->route('homepage');
     }
 }
