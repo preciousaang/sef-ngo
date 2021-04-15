@@ -211,4 +211,11 @@ class DashboardController extends Controller
         $post->save();
         return redirect()->back()->with('success', 'Updated Successfully');
     }
+
+    public function deleteNews($id)
+    {
+        $news = News::findOrFail($id);
+        $news->delete();
+        return redirect()->back()->with('message', 'Deleted Successfully');
+    }
 }

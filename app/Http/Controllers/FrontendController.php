@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Gallery;
 use App\Models\Image;
+use App\Models\News;
 use App\Models\Partner;
 use Illuminate\Http\Request;
 use App\Models\Team;
@@ -39,5 +40,26 @@ class FrontendController extends Controller
             'images' => $images,
             'galleries' => $galleries
         ]);
+    }
+
+    public function news()
+    {
+        $news = News::latest()->paginate(20);
+        return view('frontend.news', [
+            'news' => $news,
+        ]);
+    }
+
+    public function newsDetail($slug)
+    {
+        $news = News::whereSlug($slug)->firstOrFail();
+        return view('frontend.news-detail', [
+            'post' => $news
+        ]);
+    }
+
+    public function contact()
+    {
+        return view('frontend.contact');
     }
 }

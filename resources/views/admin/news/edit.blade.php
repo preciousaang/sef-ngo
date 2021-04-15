@@ -27,12 +27,12 @@
                             <div class="col-sm-9">
                                 <input type="text" name="title" value="{{$post->title}}" class="form-control @if($errors->has('title')) is-invalid @endif">
                                 @if($errors->has('title'))
-                                <div class="invalid-feedback">
-                                    @foreach($errors->get('title') as $error)
-                                        {{$error}}
-                                    @endforeach
-                                </div>
-                            @endif
+                                    <div class="invalid-feedback">
+                                        @foreach($errors->get('title') as $error)
+                                            {{$error}}
+                                        @endforeach
+                                    </div>
+                                 @endif
                             </div>
                         </div>
                         <div class="row mb-3">

@@ -18,6 +18,7 @@ class CreateNewsTable extends Migration
             $table->foreignId('user_id')
                 ->constrained()
                 ->onDelete('cascade');
+            $table->text('slug');
             $table->string('title');
             $table->string('image_url');
             $table->text('body');

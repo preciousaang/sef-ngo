@@ -18,7 +18,7 @@
                     <form action="{{route('admin-store-news')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row mb-3">
-                            <label for="" class="col-form-label col-sm-3">Image</label>
+                            <label for="" class="col-form-label col-sm-3">Title</label>
                             <div class="col-sm-9">
                                 <input type="text" name="title" value="{{old('title')}}" class="form-control @if($errors->has('title')) is-invalid @endif">
                                 @if($errors->has('title'))

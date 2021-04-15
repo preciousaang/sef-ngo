@@ -22,6 +22,9 @@ Route::get('/', [FrontendController::class, 'home'])->name('homepage');
 Route::get('/team', [FrontendController::class, 'team'])->name('team');
 Route::get('/about', [FrontendController::class, 'about'])->name('about');
 Route::get('/gallery', [FrontendController::class, 'gallery'])->name('gallery');
+Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
+Route::get('/news', [FrontendController::class, 'news'])->name('news');
+Route::get('/news/{slug}', [FrontendController::class, 'newsDetail'])->name('news-detail');
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', [LoginController::class, 'form'])->name('login');
