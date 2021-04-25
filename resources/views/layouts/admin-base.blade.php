@@ -39,6 +39,17 @@
     @livewireScripts
     @section('jsScripts')
     @show
-    
+    <script>
+      window.onload=function(){
+        window.addEventListener('toggleStatus', function(event){
+          var status=event.detail.status
+          if(status){
+            alert('Activated Successfully');
+          }else{
+            alert('Deactivated Successfully');
+          }
+        })
+      }
+    </script>
 </body>
 </html>

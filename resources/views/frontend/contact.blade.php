@@ -55,7 +55,7 @@
                 @endif
                   </div>
                 <div class="mt30">
-                  <button type="submit" class="btn-orange">Submit</a>
+                  <button type="submit" style="width: 120px; line-height: 3;" class="btn-orange btn-xl mb30">Submit</a>
                 </div>
                 </form>
               </div>

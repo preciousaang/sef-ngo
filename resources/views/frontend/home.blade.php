@@ -1,13 +1,13 @@
 @extends('layouts.base')  
   @section('content')
-  <div class="slider-r">
+  <div class="slider-r" style="margin-top: 90px;">
       <div id="mainslider">
           <div class="slider">
               <div class="fullscreen-container">
                   <div class="fullscreenbanner">
                       <ul>
                           <li data-transition="fade" data-slotamount="0"> 
-                              <img style="filter: grayscale(100%);"  alt="#" src="{{asset('assets/images/Picture2.png')}}" />
+                              <img style="filter: grayscale(100%);"  alt="#" src="{{asset('assets/images/Picture111.png')}}" />
                               <div class="caption sfb" 
                                   data-x="center" 
                                   data-y="center" 
@@ -16,13 +16,13 @@
                                   data-easing="easeOutExpo">
                                   <div class="slider-text text-center">
                                       <h1 class="text-center">
-                                          Nigeria Women
+                                        SHEA EMPOWERMENT 
                                       </h1>
-                                      <h2 class="text-center">need help</h2>
+                                      <h2 class="text-center">FOUNDATION</h2>
   
-                                      <div class="slider-btn">
+                                      {{-- <div class="slider-btn">
                                           <a class="btn btn-donate" href="index.html">DONATE</a>
-                                      </div>
+                                      </div> --}}
                                       
                                   </div>
                               </div>
@@ -65,14 +65,20 @@
                                   data-easing="easeOutExpo">
                                   <div class="slider-text-1 text-center pull-left">
                                       <div class="slider-left">
-                                          <h1 class="text-center">Clean water</h1>
-                                          <hr class="o">
-                                          <p class="white mt40">Diseases from unsafe water and lack of basic sanitation kill more people every year than all forms of violence, including war.  Children are especially vulnerable, as their bodies aren't strong enough to fight diarrhea, dysentery and other illnesses. </p>
-                                          <h2 class="white text-left mt40">Let's help <span class="text-bold">#WaterHelpForAfrica!</span></h2>
-                                          <p class="white mt40">The petition reads:
-                                          Dear Congress,
-                                          Please pass the Water Africa Act, a bill that will help provide 43 million people with access to clean water for the first time - at no new cost to taxpayers.
-                                          </p>
+                                            <h1 class="text-center">Milestones</h1>
+                                            <hr class="o">
+                                            <p class="white mt40">
+                                                Capacity building training of 2000+ women on international best agronomic practices for maximum production, yield and quality.
+                                            </p>
+                                            <p>
+                                                    Increased capacity of shea butter processors to 20+ tons per month
+                                            </p>
+                                            <h2 class="white text-left mt40">
+                                                Let's help <span class="text-bold">#WaterHelpForAfrica!</span>
+                                            </h2>
+                                            <p class="white mt40">
+                                                Donation of processing equipments including clean energy cookstoves for healthier, safer shea processing.
+                                            </p>
                                       </div>
                                       
                                   </div>
@@ -87,11 +93,11 @@
                                   data-easing="easeOutExpo" style="bottom: 40px;">
                                   <div class="slider-text text-center" style="margin-bottom: 40px;">
                                       
-                                      <div class="slider-social">
+                                      {{-- <div class="slider-social">
                                           <a href="index.html"><i class="fa fa-facebook"></i></a>
                                           <a href="index.html"><i class="fa fa-twitter"></i></a>
                                           <a href="index.html"><i class="fa fa-instagram"></i></a>
-                                      </div>
+                                      </div> --}}
                                       
                                   </div>
                               </div>
@@ -162,8 +168,6 @@
                               <h2></h2>
                           </div>
                           <div class="spot-details">
-                              <p>Capacity building training of 2000+ women on international best agronomic practices for maximum production, yield and quality.</p>
-                              <p>Capacity building training of 2000+ women on international best agronomic practices for maximum production, yield and quality.</p>
                               <p>Capacity building training of 2000+ women on international best agronomic practices for maximum production, yield and quality.</p>
                           </div>
   
@@ -273,11 +277,11 @@
                       <div class="find-img">
                           <img src="img/find-us.jpg" alt="">
                       </div>
-                      <div class="find-text text-center">
+                      <div class="find-text text-center" style="width: 300px">
                           <div class="spot-heading">
                               <h1>Where to find us</h1>
                               <h2>Locate Us</h2>
-                              <p>The address is 17, Akeem Odumosu Crescent, Magodo GRA, Lagos</p>
+                              <p>The address is 17, <br>Akeem Odumosu Crescent, Magodo GRA, Lagos</p>
                           </div>
                           
                       </div>

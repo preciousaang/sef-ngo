@@ -1,16 +1,15 @@
-<h3>Setup Team</h3>
 <div class="row">
     <div>
         <div class="card">
             <div class="card-header">
                 <h3 class="text-center">
-                    Team
+                    Partners
                 </h3>
             </div>
             <div class="card-body">
                 <div class="d-flex justify-content-end">
                     <button data-bs-toggle="modal" data-bs-target="#newTeam" class="btn btn-sm btn-outline-primary mb-3">
-                        <i class="mdi mdi-plus"></i>&nbsp; Add Team
+                        <i class="mdi mdi-plus"></i>&nbsp; Add Partner
                     </button>
                     <livewire:admin.partners.create />
                 </div>

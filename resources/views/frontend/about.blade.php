@@ -1,4 +1,5 @@
 @extends('layouts.base')
+@section('title', 'About Us')
 @section('content')
     <div class="mb10">
         <section class="mt160">
@@ -55,7 +56,7 @@
                         <img class="img-responsive" src="{{asset('assets/images/Picture1-1.png')}}" alt="">
                       </div>
                       <div class="col-md-5">
-                        <div class="project-description">
+                        <div class="project-description" style="margin-left: 12px;">
                           <h1>Milestone 1</h1>
                           <hr class="small">
             
@@ -73,7 +74,7 @@
                         <img class="img-responsive" src="{{asset('assets/images/Picture1.png')}}" alt="">
                       </div>
                       <div class="col-md-5">
-                        <div class="project-description">
+                        <div class="project-description"  style="margin-left: 12px;>
                           <h1>Project 1</h1>
                           <hr class="small">
             
@@ -91,7 +92,7 @@
                         <img class="img-responsive" src="{{asset('assets/images/Picture1.png')}}" alt="">
                       </div>
                       <div class="col-md-5">
-                        <div class="project-description">
+                        <div class="project-description"  style="margin-left: 12px;>
                           <h1>Project 1</h1>
                           <hr class="small">
             
@@ -109,7 +110,7 @@
                         <img class="img-responsive" src="{{asset('assets/images/Picture1.png')}}" alt="">
                       </div>
                       <div class="col-md-5">
-                        <div class="project-description">
+                        <div class="project-description"  style="margin-left: 12px;>
                           <h1>Project 1</h1>
                           <hr class="small">
             

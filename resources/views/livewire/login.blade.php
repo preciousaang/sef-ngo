@@ -45,7 +45,7 @@
                     </form>
                 </div>
                 <div class="card-footer">
-                    <div class="text-center">Designed By AGZ</div>
+                    {{-- <div class="text-center">Designed By AGZ</div> --}}
                 </div>
             </div>
         </div>

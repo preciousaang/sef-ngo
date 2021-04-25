@@ -13,7 +13,7 @@ class TeamsDetail extends Component
         $status = (bool)$this->team->active;
         $this->team->active = !$status;
         $this->team->save();
-        session()->flash('info', 'Status Changed');
+        $this->dispatchBrowserEvent('toggleStatus', ['status' => (bool)$this->team->active]);
     }
 
     public function render()

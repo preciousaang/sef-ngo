@@ -13,7 +13,7 @@ class Detail extends Component
         $status = (bool)$this->project->active;
         $this->project->active = !$status;
         $this->project->save();
-        session()->flash('info', 'Status Changed');
+        $this->dispatchBrowserEvent('toggleStatus', ['status' => (bool)$this->project->active]);
     }
 
     public function render()

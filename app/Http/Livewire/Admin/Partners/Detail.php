@@ -14,7 +14,7 @@ class Detail extends Component
         $status = (bool)$this->partner->active;
         $this->partner->active = !$status;
         $this->partner->save();
-        session()->flash('info', 'Status Changed');
+        $this->dispatchBrowserEvent('toggleStatus', ['status' => (bool)$this->partner->active]);
     }
 
 
