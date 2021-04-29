@@ -15,6 +15,7 @@ class GalleryDetail extends Component
         $this->gallery->save();
         $this->dispatchBrowserEvent('toggleStatus', ['status' => (bool)$this->gallery->active]);
     }
+
     public function render()
     {
         return view('livewire.admin.gallery.gallery-detail');
