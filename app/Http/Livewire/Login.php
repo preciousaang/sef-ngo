@@ -9,15 +9,15 @@ use Livewire\Component;
 
 class Login extends Component
 {
-    public $username;
+    public $email;
     public $password;
 
     protected $rules = [
-        'username' => 'required|exists:users',
+        'email' => 'required|exists:users',
         'password' => 'required'
     ];
     protected $messages = [
-        'username.exists' => 'User does not exist'
+        'email.exists' => 'User does not exist'
     ];
     public function render()
     {
@@ -27,10 +27,10 @@ class Login extends Component
     public function doLogin()
     {
         $this->validate();
-        $user = User::where('username', $this->username)->first();
+        $user = User::where('email', $this->email)->first();
         if (Hash::check($this->password, $user->password)) {
             if (!(bool)$user->active) {
-                $this->addError('username', 'You account is inactive');
+                $this->addError('email', 'You account is inactive');
                 $this->password = "";
                 return;
             }

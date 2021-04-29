@@ -70,6 +70,16 @@
                     </form>
                 </div>
             </div>
+            <div class="d-flex justify-content-center mt-5">
+                
+                <a href="{{route('homepage')}}" class="text-info">
+                    Go Home
+                </a>
+                &nbsp;&nbsp;
+                <a href="{{route('login')}}" class="text-info">
+                   GoTo Login
+                </a>
+            </div>
         </div>
     </div>
 </div>

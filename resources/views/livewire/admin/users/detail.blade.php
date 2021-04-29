@@ -1,6 +1,5 @@
 <tr id="{{$user->id}}">
     <td>{{$user->name}}</td>
-    <td>{{$user->username}}</td>
     <td>{{$user->email}}</td>
     <td>{{$user->created_at}}</td>
     <td>

@@ -56,6 +56,19 @@
                             @endif
                             </div>
                         </div>
+                        <div class="row mb-3">
+                            <label for="" class="col-form-label col-sm-3">Send New to all subscribers</label>
+                            <div class="col-sm-9">
+                                <input type="checkbox" class="form-check-input" name="checkbox">
+                                @if($errors->has('checkbox'))
+                                <div class="text-danger">
+                                    @foreach($errors->get('checkbox') as $error)
+                                        {{$error}}
+                                    @endforeach
+                                </div>
+                            @endif
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-md-9 offset-md-3">
                                 <button class="btn btn-outline-primary btn-sm" type="submit">Add News</button>

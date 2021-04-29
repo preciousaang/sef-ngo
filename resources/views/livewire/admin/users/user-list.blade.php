@@ -19,7 +19,6 @@
                     <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Username</th>
                             <th>E-mail</th>
                             <th>Date Joined</th>
                             <th>Status</th>

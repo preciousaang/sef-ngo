@@ -7,14 +7,12 @@ use Livewire\Component;
 
 class Create extends Component
 {
-    public $username;
     public $name;
     public $email;
     public $password;
     public $password_confirmation;
 
     protected $rules = [
-        'username' => 'required|alphanum|unique:users|max:191',
         'email' => 'required|email|unique:users',
         'name' => 'required|string|max:255',
         'password' => 'required|string|min:8|max:80|confirmed',
@@ -28,7 +26,6 @@ class Create extends Component
     {
         $this->validate();
         User::create([
-            'username' => $this->username,
             'name' => $this->name,
             'password' => bcrypt($this->password),
             'email' => $this->email

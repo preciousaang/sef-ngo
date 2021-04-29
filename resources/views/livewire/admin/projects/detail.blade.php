@@ -21,7 +21,7 @@
                         Edit
                     </a>
                 </li>
-                <li><a href="{{route('admin-project-delete', $project->id)}}" onclick="return confirm('Are you sure')" class="dropdown-item">Delete</a></li>
+                {{-- <li><a href="{{route('admin-project-delete', $project->id)}}" onclick="return confirm('Are you sure')" class="dropdown-item">Delete</a></li> --}}
             </ul>
         </div>
     </td>

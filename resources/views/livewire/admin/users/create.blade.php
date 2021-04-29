@@ -21,19 +21,6 @@
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label for="" class="col-form-label col-sm-3">Username</label>
-                    <div class="col-sm-9">
-                        <input type="text" wire:model="username" class="form-control @if($errors->has('username')) is-invalid @endif">
-                        @if($errors->has('username'))
-                            <div class="invalid-feedback">
-                                @foreach($errors->get('username') as $error)
-                                    {{$error}}
-                                @endforeach
-                            </div>
-                        @endif
-                    </div>
-                </div>
-                <div class="row mb-3">
                     <label for="" class="col-form-label col-sm-3">E-mail</label>
                     <div class="col-sm-9">
                         <input type="text" wire:model="email" placeholder="abc@xyz.com" class="form-control @if($errors->has('email')) is-invalid @endif">

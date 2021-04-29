@@ -13,11 +13,11 @@
                     @include('includes.partials')
                     <form wire:submit.prevent="doLogin">
                         <div class="row mb-3">
-                            <label for="" class="col-sm-3 col-form-label">Username</label>
+                            <label for="" class="col-sm-3 col-form-label">E-Mail</label>
                             <div class="col-sm-9">
-                                <input wire:model="username" type="text" class="form-control @if($errors->has('username')) is-invalid @endif">
-                                @if($errors->has('username')) 
-                                    @foreach($errors->get('username') as $error)
+                                <input wire:model="email" type="text" class="form-control @if($errors->has('email')) is-invalid @endif">
+                                @if($errors->has('email')) 
+                                    @foreach($errors->get('email') as $error)
                                         <div class="invalid-feedback">
                                             {{$error}}
                                         </div>
@@ -51,6 +51,12 @@
                 <div class="card-footer">
                     {{-- <div class="text-center">Designed By AGZ</div> --}}
                 </div>
+            </div>
+            <div class="d-flex justify-content-center mt-5">
+                
+                <a href="{{route('homepage')}}" class="text-info">
+                    Go Home
+                </a>
             </div>
         </div>
     </div>

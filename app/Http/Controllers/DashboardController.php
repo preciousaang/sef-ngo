@@ -183,7 +183,10 @@ class DashboardController extends Controller
             'image_url' => basename($request->file('image')->store('public/uploads')),
             'body' => $request->post('body')
         ]);
-        NewsCreated::dispatch($news);
+        if ($request->post('checkbox')) {
+            NewsCreated::dispatch($news);
+        }
+
         session()->flash('success', 'News created successfully');
         return redirect()->route('admin-news');
     }
