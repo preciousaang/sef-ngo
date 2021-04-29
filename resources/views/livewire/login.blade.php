@@ -1,6 +1,10 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
+            <div class="d-flex mb-2 justify-content-center">
+                <img src="{{asset('img/logo.png')}}" alt="Logo">
+            </div>
+            
             <div class="card">
                 <div class="card-header bg-info">
                     <h5 class="text-center text-white">Login</h5>

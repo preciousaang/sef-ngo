@@ -29,6 +29,11 @@ class Login extends Component
         $this->validate();
         $user = User::where('username', $this->username)->first();
         if (Hash::check($this->password, $user->password)) {
+            if (!(bool)$user->active) {
+                $this->addError('username', 'You account is inactive');
+                $this->password = "";
+                return;
+            }
             session()->flash('success', 'Login Successful');
             Auth::login($user);
             return redirect()->intended(route('dashboard'));

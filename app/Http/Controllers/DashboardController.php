@@ -237,4 +237,9 @@ class DashboardController extends Controller
         $user->save();
         return redirect()->back()->with('message', 'Password changed successfully');
     }
+
+    public function users(Request $request)
+    {
+        return view('admin.users.list');
+    }
 }

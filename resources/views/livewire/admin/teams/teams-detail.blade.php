@@ -6,6 +6,11 @@
     <td>
         <img width="50" height="50" class="img-responsive rounded-circle" src="{{asset('storage/uploads/'.$team->image_url)}}" alt="">
     </td>
+
+        <td>
+            {{$team->active?'Active': 'Inactive'}}
+        </td>
+
     <td>
         <div class="btn-group" role="group">
             <button id="btnGroupDrop{{$team->id}}" class="btn btn-sm dropdown-toggle btn-outline-primary" data-bs-toggle="dropdown" aria-expanded="false">

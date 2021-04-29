@@ -86,7 +86,8 @@
                       <i class="fa fa-phone orange"></i> <span class="text-bold"> Phone:</span>
                     </div>
                     <div class="col-md-7">
-                      <span>08060334996</span>
+                      <span>+234 906 289 9919</span>
+                      <span>+234 803 517 2779</span>
                     </div>
                   </div>
                 </div>

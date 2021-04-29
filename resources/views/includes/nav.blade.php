@@ -28,7 +28,7 @@
                 <a href="{{route('news')}}">News</a>
             </li>
             <li><a href="{{route('contact')}}">Contact Us</a></li>
-            <li></li>
+           
            
         </ul>
         </div><!--/.nav-collapse -->

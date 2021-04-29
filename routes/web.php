@@ -4,9 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ResetPasswordController;
-use App\Http\Livewire\Admin\Images\Edit;
 use Illuminate\Support\Facades\Route;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +21,8 @@ Route::get('/', [FrontendController::class, 'home'])->name('homepage');
 Route::get('/team', [FrontendController::class, 'team'])->name('team');
 Route::get('/about', [FrontendController::class, 'about'])->name('about');
 Route::get('/gallery', [FrontendController::class, 'gallery'])->name('gallery');
-Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
-Route::post('/contact', [FrontendController::class, 'contactUs'])->name('contact-us');
+Route::get('/sefc', [FrontendController::class, 'contact'])->name('contact');
+Route::post('/sefc', [FrontendController::class, 'contactUs'])->name('contact-us');
 Route::post('/newsletter', [FrontendController::class, 'joinNewsLetter'])->name('join-newsletter');
 Route::get('/unsubscribe', [FrontendController::class, 'unsubscribeNewsLetter'])->name('unsubscribe');
 Route::get('/news', [FrontendController::class, 'news'])->name('news');
@@ -81,5 +79,8 @@ Route::middleware('auth')->group(function () {
         Route::get('/mailable', function () {
             return new App\Mail\NewsLetter(App\Models\News::find(1), 'pr@mail.com');
         });
+
+        // Users
+        Route::get('/users', [DashboardController::class, 'users'])->name('admin-users');
     });
 });

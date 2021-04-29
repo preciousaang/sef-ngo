@@ -20,6 +20,7 @@
                         <tr>
                             <th>Name</th>
                             <th>Image</th>
+                            <th>Status</th>
                             <th>Actions</th>
                         </tr>
                     </thead>

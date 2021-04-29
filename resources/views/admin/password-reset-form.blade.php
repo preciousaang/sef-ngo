@@ -4,6 +4,9 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
+            <div class="d-flex mb-2 justify-content-center">
+                <img src="{{asset('img/logo.png')}}" alt="Logo">
+            </div>
             <div class="card">
                 <div class="card-header bg-info">
                     <h5 class="text-center text-white">Enter Your Email to request a reset link.</h5>
@@ -62,7 +65,7 @@
                     </form>
                 </div>
                 <div class="card-footer">
-                    <div class="text-center">Designed By AGZ</div>
+                    <div class="text-center"></div>
                 </div>
             </div>
         </div>

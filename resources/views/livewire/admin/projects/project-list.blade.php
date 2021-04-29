@@ -22,6 +22,8 @@
                             <th>Title</th>
                             <th>Subtitle</th>
                             <th>Detail(Excerpt)</th>
+                            <th>Status</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody id="sortable-project">

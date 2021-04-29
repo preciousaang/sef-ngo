@@ -98,13 +98,16 @@ class FrontendController extends Controller
     public function joinNewsLetter(Request $request)
     {
         $request->validate([
-            'email' => 'required|email|unique:subscribers'
+            'email' => 'required|email'
         ]);
+        if (Subscriber::whereEmail($request->post('email'))->count()) {
+            return redirect(url(route('homepage') . '/#newsletter'))->with('message', 'You are already subscribed');
+        }
         Subscriber::create([
             'email' => $request->post('email')
         ]);
 
-        return redirect()->back()->with('success', 'You have successfully subscribed to our newsletter');
+        return redirect(url(route('homepage') . '/#newsletter'))->with('success', 'You have successfully subscribed to our newsletter');
     }
 
     public function unsubscribeNewsLetter(Request $request)

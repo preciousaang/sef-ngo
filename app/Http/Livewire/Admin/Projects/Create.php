@@ -28,6 +28,7 @@ class Create extends Component
 
     public function addProject()
     {
+        $this->validate();
         $newProject = Project::create([
             'title' => $this->title,
             'subtitle' => $this->subtitle,

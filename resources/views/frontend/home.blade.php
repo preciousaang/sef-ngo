@@ -19,10 +19,10 @@
                                         SHEA EMPOWERMENT 
                                       </h1>
                                       <h2 class="text-center">FOUNDATION</h2>
+                                      <p class="white mt40 text-center" style="font-size: 170%; font-weight:510; line-height: 170%; background-color: rgba(0,0,0, 0.3);">
+                                        Capacity building training of 2000+ women on international best <br> agronomic practices for maximum production, yield and quality.
+                                      </p>
   
-                                      {{-- <div class="slider-btn">
-                                          <a class="btn btn-donate" href="index.html">DONATE</a>
-                                      </div> --}}
                                       
                                   </div>
                               </div>
@@ -34,11 +34,7 @@
                                   data-easing="easeOutExpo" style="bottom:0; margin-bottom: 50px;">
                                   <div class="slider-text text-center">
                                       
-                                      {{-- <div class="slider-social">
-                                          <a href="index.html"><i class="fa fa-facebook"></i></a>
-                                          <a href="index.html"><i class="fa fa-twitter"></i></a>
-                                          <a href="index.html"><i class="fa fa-instagram"></i></a>
-                                      </div> --}}
+                                     
                                       
                                   </div>
                               </div>
@@ -63,61 +59,27 @@
                                   data-speed="1000" 
                                   data-start="1000" 
                                   data-easing="easeOutExpo">
-                                  <div class="slider-text-1 text-center pull-left">
+                                  <div style="margin-left: 10px;" class="copaign-slider-text text-center pull-left">
                                       <div class="slider-left">
-                                            <h1 class="text-center">Milestones</h1>
+                                            <h1 class="text-center" style="background-color:rgba(0,0,0, 0.3); font-weight: bold;">Milestones</h1>
                                             <hr class="o">
-                                            <p class="white mt40">
+                                            <p class="white mt40" style="font-size: 170%; line-height:150%; font-weight: 510; background-color: rgba(0,0,0, 0.3);">
                                                 Capacity building training of 2000+ women on international best agronomic practices for maximum production, yield and quality.
                                             </p>
-                                            <p>
+                                            <p class="white m40" style="font-size: 170%; line-height: 150%; font-weight: 510; background-color: rgba(0,0,0, 0.3);">
                                                     Increased capacity of shea butter processors to 20+ tons per month
                                             </p>
-                                            <h2 class="white text-left mt40">
-                                                Let's help <span class="text-bold">#WaterHelpForAfrica!</span>
+                                            <h2 class="white text-left mt40" style="background-color: rgba(0,0,0, 0.3);">
+                                                 <span class="text-bold">#SheaEmpowerment</span>
                                             </h2>
-                                            <p class="white mt40">
-                                                Donation of processing equipments including clean energy cookstoves for healthier, safer shea processing.
-                                            </p>
+                                            
                                       </div>
                                       
                                   </div>
                               </div>
                              
   
-                              <div class="caption sfb" 
-                                  data-x="left" 
-                                  data-y="bottom" 
-                                  data-speed="1000" 
-                                  data-start="1000" 
-                                  data-easing="easeOutExpo" style="bottom: 40px;">
-                                  <div class="slider-text text-center" style="margin-bottom: 40px;">
-                                      
-                                      {{-- <div class="slider-social">
-                                          <a href="index.html"><i class="fa fa-facebook"></i></a>
-                                          <a href="index.html"><i class="fa fa-twitter"></i></a>
-                                          <a href="index.html"><i class="fa fa-instagram"></i></a>
-                                      </div> --}}
-                                      
-                                  </div>
-                              </div>
-                              <div class="caption sfb" 
-                                  data-x="center" 
-                                  data-y="bottom" 
-                                  data-speed="1000" 
-                                  data-start="1000" 
-                                  data-easing="easeOutExpo" style="bottom: 20px;">
-                                  <div class="slider-text text-center">
-                                      
-                                      
-                                      
-                                  </div>
-                              </div>
-                          </li>
-                          <li data-transition="slide" data-slotamount="10"> 
-                              <img  alt="#" src="{{asset('assets/images/Picture1.png')}}"/>
-                              
-                              
+                             
                           </li>
                       </ul>
                   </div>
@@ -167,7 +129,7 @@
                               <h1>Milestones</h1>
                               <h2></h2>
                           </div>
-                          <div class="spot-details">
+                          <div class="spot-details" style="font-style 150%;">
                               <p>Capacity building training of 2000+ women on international best agronomic practices for maximum production, yield and quality.</p>
                           </div>
   
@@ -192,7 +154,7 @@
               @foreach($projects as $project)
               <div class="col-md-4 col-sm-6 our-work-main">
                   <div class="our-work-inner">
-                      <img class="img-responsive" src="{{asset('storage/uploads/'.$project->image_url)}}" alt="">
+                      <img class="img-responsive" src="{{asset('storage/uploads/'.$project->image_url)}}" style="height: 300px;" alt="">
                       <div class="our-work-hover">
                           <div class="our-work-hover-text text-uppercase">
                               <h4>{{$project->title}}</h4>
@@ -211,64 +173,6 @@
   </section>
  
  
-  {{-- <section>
-      <div class="container">
-          <div class="row">
-              <div class="col-md-12 gallery-filter">
-                  <h1 class="wow slideInDown">our gallery</h1>
-                  <div class="galley-nav pull-right wow fadeIn">
-                      <a href="javascript:" class="btn btn-orange filter" data-filter="all">Nauru</a>
-                      <a href="javascript:" class="btn btn-orange filter" data-filter=".mala">Malawi</a>
-                      <a href="javascript:" class="btn btn-orange filter" data-filter=".ni">Niger</a>
-                      <a href="javascript:" class="btn btn-orange filter" data-filter=".bu">Burundi</a>
-                  </div>
-                  <hr>
-  
-                  <div class="gallery-area wow slideInDown">
-                      <div id="Container">
-                          <div class="mix bu ni">
-                              <img class="img-responsive" src="img/gallery/1.jpg" alt="">
-                              <div class="gallery-mix-hover text-center">
-                                  <a href="index.html#" data-featherlight="img/gallery/1.jpg" class="btn btn-white">View Image</a>
-                              </div>
-  
-                          </div>
-                          <div class="mix bu">
-                              <img class="img-responsive" src="img/gallery/2.jpg" alt="">
-                              <div class="gallery-mix-hover text-center">
-                                  <a href="index.html#" data-featherlight="img/gallery/2.jpg" class="btn btn-white">View Image</a>
-                              </div>
-                          </div>
-                          <div class="mix mala bu ni">
-                              <img class="img-responsive" src="img/gallery/3.jpg" alt="">
-                              <div class="gallery-mix-hover text-center">
-                                  <a href="index.html#" data-featherlight="img/gallery/3.jpg" class="btn btn-white">View Image</a>
-                              </div>
-                          </div>
-                          <div class="mix bu">
-                              <img class="img-responsive" src="img/gallery/4.jpg" alt="">
-                              <div class="gallery-mix-hover text-center">
-                                  <a href="index.html#" data-featherlight="img/gallery/4.jpg" class="btn btn-white">View Image</a>
-                              </div>
-                          </div>
-                          <div class="mix mala ni">
-                              <img class="img-responsive" src="img/gallery/5.jpg" alt="">
-                              <div class="gallery-mix-hover text-center">
-                                  <a href="index.html#" data-featherlight="img/gallery/5.jpg" class="btn btn-white">View Image</a>
-                              </div>
-                          </div>
-                          <div class="mix mala ni">
-                              <img class="img-responsive" src="img/gallery/6.jpg" alt="">
-                              <div class="gallery-mix-hover text-center">
-                                  <a href="index.html#" data-featherlight="img/gallery/6.jpg" class="btn btn-white">View Image</a>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section> --}}
   <section>
       <div id="find-us" class="wow slideInDown mb10">
           <div class="item">
@@ -281,7 +185,7 @@
                           <div class="spot-heading">
                               <h1>Where to find us</h1>
                               <h2>Locate Us</h2>
-                              <p>The address is 17, <br>Akeem Odumosu Crescent, Magodo GRA, Lagos</p>
+                              <p>17, <br>Akeem Odumosu Crescent, Magodo GRA, Lagos</p>
                           </div>
                           
                       </div>
@@ -348,11 +252,16 @@
                   <div class="clearfix"></div>
               </div>
               <div class="col-md-6 col-sm-6">
-                  <div class="newsletter">
+                  <div class="newsletter" id="newsletter">
                       <h1>Join Our Newsletter</h1>
                       <hr>
-                      <p>Africa’s Summer Newsletter 2015 is now ready for you to download and read. It’s got news about our projects in Malawi and a recent visit by two of our wonderful donors.</p>
+                      <p>Be the first to get our latest news.</p>
                       @include('includes.partials')
+                      @if($errors->has('email'))
+                        @foreach($errors->get('email') as $error)
+                            <p class="alert alert-danger">{{$error}}</p>
+                        @endforeach
+                      @endif
                       <form action="{{route('join-newsletter')}}" method="POST">
                         @csrf
                           <input required  type="email" class="form-control mb10" value="{{old('email')}}" name="email" placeholder="Your Email Address">
@@ -391,7 +300,7 @@
                               <span>{{$post->user->name}}</span>
                           </div>
                           <div class="post-time pull-right orange">
-                              <i class="fa fa-clock-o"></i> <span> {{$post->created_at->diffForHumans()}}</span>
+                              <i class="glyphicon glyphicon-time"></i> <span> {{$post->created_at->diffForHumans()}}</span>
                           </div>
                       </div>
                       <div class="clearfix"></div>

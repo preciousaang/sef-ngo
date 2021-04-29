@@ -8,6 +8,9 @@
             @include('includes.admin-nav')
         </div>
         <div class="col-md-9">
+            <div class="d-flex mb-2 justify-content-center">
+                <img src="{{asset('img/logo.png')}}" alt="Logo">
+            </div>
             <div class="card">
                 <div class="card-header">
                     <h2 class="text-center">

@@ -22,6 +22,9 @@
             <a href="{{route('admin-news')}}" class="list-group-item">
                 News
             </a>
+            <a href="{{route('admin-users')}}" class="list-group-item">
+                Manage Users
+            </a>
             <a href="{{route('logout')}}" class="list-group-item">
                 Logout
             </a>

@@ -7,10 +7,12 @@
           <h1>Gallery</h1>
           <hr>
               <div class="galley-nav mt50">
-                <a href="javascript:" class="btn btn-orange filter" data-filter="all">All</a>
-                @foreach($galleries as $gallery)
-                    <a href="javascript:" class="btn btn-orange filter" data-filter=".{{$gallery->id}}">{{$gallery->title}}</a>
-                @endforeach
+                @if(count($images))
+                  <a href="javascript:" class="btn btn-orange filter" data-filter="all">All</a>
+                  @foreach($galleries as $gallery)
+                      <a href="javascript:" class="btn btn-orange filter" data-filter=".{{$gallery->id}}">{{$gallery->title}}</a>
+                  @endforeach
+                @endif
             </div>
         
       
@@ -44,84 +46,12 @@
   </div>
     </div>
   </section>
-  <section>
-    <div id="find-us" class="wow slideInDown">
-      <div class="item">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="find-img">
-              <img src="img/find-us.jpg" alt="">
-            </div>
-            <div class="find-text text-center">
-              <div class="spot-heading">
-                <h1>Where to find us</h1>
-                <h2>Locate Us.</h2>
-              </div>
-              <div class="find-details">
-                <p> Or contact us directly:</p>
-                <a class="btn btn-white" href="gallery-3columns.html">Contact Us</a>
-              </div>
-            </div>
-            <div class="find-quote">
-              <p>“Loneliness and the feeling of being unwanted is the most terrible poverty.”</p>
-              <p class="author">- A. P. J. Abdul Kalam</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="find-img">
-              <img src="img/find-us.jpg" alt="">
-            </div>
-            <div class="find-text text-center">
-              <div class="spot-heading">
-                <h1>Where to find us</h1>
-                <h2>Locate Us.</h2>
-              </div>
-              <div class="find-details">
-                <p> Or contact us directly:</p>
-                <a class="btn btn-white" href="gallery-3columns.html">Contact Us</a>
-              </div>
-            </div>
-            <div class="find-quote">
-              <p>“Loneliness and the feeling of being unwanted is the most terrible poverty.”</p>
-              <p class="author">- A. P. J. Abdul Kalam</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="find-img">
-              <img src="img/find-us.jpg" alt="">
-            </div>
-            <div class="find-text text-center">
-              <div class="spot-heading">
-                <h1>Where to find us</h1>
-                <h2>Locate Us.</h2>
-              </div>
-              <div class="find-details">
-                <p> Or contact us directly:</p>
-                <a class="btn btn-white" href="gallery-3columns.html">Contact Us</a>
-              </div>
-            </div>
-            <div class="find-quote">
-              <p>“Loneliness and the feeling of being unwanted is the most terrible poverty.”</p>
-              <p class="author">- A. P. J. Abdul Kalam</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="no-padding no-margin">
+  <hr>
+  <section class="no-padding no-margin mb30">
     <div class="container wow fadeIn">
       <div class="row">
         <div class="col-md-6 col-sm-6">
-          <img class="img-responsive pull-right" src="img/newsletter-girl4.jpg" alt="">
+          <img class="img-responsive pull-right" src="{{asset('assets/images/Picture2-1.png')}}" alt="">
           <div class="clearfix"></div>
         </div>
         <div class="col-md-6 col-sm-6">
@@ -129,60 +59,16 @@
             <h1>Join Our Newsletter</h1>
             <hr>
             <p>Africa’s Summer Newsletter 2015 is now ready for you to download and read. It’s got news about our projects in Malawi and a recent visit by two of our wonderful donors.</p>
-            <form action="gallery-3columns.html#">
-              <input type="text" class="form-control" value="Your Email Address">
-              <input class="btn btn-orange" type="submit" value="Subscribe">
+            @include('includes.partials')
+            <form action="{{route('join-newsletter')}}" method="POST">
+              @csrf
+                <input required  type="email" class="form-control mb10" value="{{old('email')}}" name="email" placeholder="Your Email Address">
+                <input class="btn btn-orange" type="submit" value="Subscribe">
             </form>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <section class="no-margin no-padding">
-    <div class="twitter-feeds wow slideInDown">
-      <div class="container">
-        <div id="twitter-slider">
-          <div class="item">
-            <div class="row">
-              <div class="col-md-11">
-                <div class="tweet-time pull-left white">
-                  <i class="fa fa-twitter"></i><span>2 days ago</span>
-                </div>
-                <div class="twitter-tweet pull-right white">  
-                  <p class="white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel felis a tellus dignissim laoreet. Mauris dapibus ut elit quis pulvinar. </p>
-                </div>
-              </div>
-              <div class="col-md-1"></div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="row">
-              <div class="col-md-11">
-                <div class="tweet-time pull-left white">
-                  <i class="fa fa-twitter"></i><span>2 days ago</span>
-                </div>
-                <div class="twitter-tweet pull-right white">  
-                  <p class="white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel felis a tellus dignissim laoreet. Mauris dapibus ut elit quis pulvinar. </p>
-                </div>
-              </div>
-              <div class="col-md-1"></div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="row">
-              <div class="col-md-11">
-                <div class="tweet-time pull-left white">
-                  <i class="fa fa-twitter"></i><span>2 days ago</span>
-                </div>
-                <div class="twitter-tweet pull-right white">  
-                  <p class="white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel felis a tellus dignissim laoreet. Mauris dapibus ut elit quis pulvinar. </p>
-                </div>
-              </div>
-              <div class="col-md-1"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  
 @endsection

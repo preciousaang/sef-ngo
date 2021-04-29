@@ -64,8 +64,8 @@
 
 
 
-body{
-	font-family: Montserrat, 'Droid Sans', sans-serif;
+body, html{
+	font-family: "Calibri" !important;
 	overflow-x:hidden;
 	font-size: 16px;
 	font-weight: normal;
@@ -87,7 +87,7 @@ h6{font-size: 15px;}
 }
 p{
 	/* font-family: Montserrat; */
-	font-family: 'Droid Sans', sans-serif;
+	font-family: Montserrat, 'Droid Sans', sans-serif;
 	font-size: 14px;
 	color: #2f2f2f;
 	line-height: 24px;
@@ -1159,7 +1159,7 @@ section{
 	margin-top: 20px;
 }
 .project-description p{
-	font-family: 'Droid Sans', sans-serif;
+	font-family: Montserrat, 'Droid Sans', sans-serif;
 	color: #2f2f2f;
 	margin-top: 10px;
 	line-height: 30px;
@@ -1195,7 +1195,7 @@ section{
 	height: 61px;
 }
 .help-ways p{
-	font-family: 'Droid Sans', sans-serif;
+	font-family: Montserrat, 'Droid Sans', sans-serif;
 }
 .help-ways a{
 	margin-top: 10px;
@@ -1288,7 +1288,7 @@ section{
 	width: 97%;
 }
 .our-work-content p{
-	font-family: 'Droid Sans', sans-serif;
+	font-family: Montserrat, 'Droid Sans', sans-serif;
 }
 .our-work-content > span {
     border-bottom: 1px solid #ececec;
@@ -1329,6 +1329,7 @@ section{
 
 
 .copaign-slider-text{
+	font-size: 100%;
 	border-top:7px solid #f8f8f8;
 	border-bottom:7px solid #f8f8f8;	
 	padding: 15px 0;
@@ -1736,7 +1737,7 @@ section{
 }
 .find-quote p{
 	color: #fff;
-	font-family: 'Droid Sans', sans-serif;
+	font-family: Montserrat, 'Droid Sans', sans-serif;
 	font-size: 18px;
 }
 .find-quote p:nth-of-type(1){
@@ -1770,7 +1771,7 @@ section{
 	margin-top: 145px;
 }
 .newsletter p{
-	font-family: 'Droid Sans', sans-serif;
+	font-family: Montserrat, 'Droid Sans', sans-serif;
 	margin-top: 12px;
 }
 .newsletter form{
@@ -1780,7 +1781,7 @@ section{
 	border:1px solid #dcdcdc;
 	color: #cacac9 !important;
 	box-shadow: none;
-	font-family: 'Droid Sans', sans-serif;
+	font-family: Montserrat, 'Droid Sans', sans-serif;
 	font-size: 13px;
 
 
@@ -1870,7 +1871,7 @@ section{
 	visibility: hidden;
 }
 .member-hover-top p, .member-hover-bottom p{
-	font-family: 'Droid Sans', sans-serif;
+	font-family: Montserrat, 'Droid Sans', sans-serif;
 
 }
 .team-member:hover > .member-hover-top, .team-member.active > .member-hover-top{
@@ -1939,10 +1940,10 @@ section{
 	margin-top: 30px;
 }
 .post-title h3{
-	font-family: "Droid Sans", sans-serif;
+	font-family: Montserrat, "Droid Sans", sans-serif;
 }
 .post-title span{
-	font-family: "Droid Sans", sans-serif;
+	font-family: Montserrat ,"Droid Sans", sans-serif;
 	font-size: 14px;
 	vertical-align: middle;
 	margin-right: 28px;
@@ -1991,7 +1992,7 @@ section{
 	margin-top: 20px;
 }
 .comment-rr span{
-	font-family: "Droid Sans", sans-serif;
+	font-family: Montserrat, "Droid Sans", sans-serif;
 	font-size: 13px;
 	font-weight: normal;
 
@@ -2020,7 +2021,7 @@ section{
 	line-height: 28px;	
 }
 .leave-comment label{
-	font-family: "Droid Sans", sans-serif;
+	font-family: Montserrat, "Droid Sans", sans-serif;
 	color: #2f2f2f;
 	font-size: 14px;
 	width: 100px;
@@ -3342,14 +3343,20 @@ ul.profile-detail > li > span{
             <div class="col-md-3 col-sm-6 contact">
                 <h2>Contact Us</h2>
                 <div class="contact-details">
-                    <span><i class="fa fa-map-marker white"></i></span>
+                    <span><i class="glyphicon glyphicon-map-marker white"></i></span>
                     <p>17, Akeem Odumosu Crescent, Magodo GRA, Lagos</p>
-                    <span><i class="fa fa-phone white"></i></span>
+                    <span><i class="glyphicon glyphicon-earphone white"></i></span>
                     <p>08060334996</p>
-                    <span><small><i class="fa fa-envelope white"></i></small></span>
+                    <span><small><i class="glyphicon glyphicon-envelope white"></i></small></span>
                     <p>info@sefng.org</p>
                 </div>
             </div>
+			<div class="col-md-3 col-sm-6">
+				<h2>Admin</h2>
+				<ul class="list-unstyled">
+					<li><a href="{{route('login')}}"><i class="glyphicon glyphicon-cog"></i>&nbsp; Login</a></li>
+				</ul>
+			</div>
         </div>
     </div>
 </footer>

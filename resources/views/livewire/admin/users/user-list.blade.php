@@ -1,36 +1,34 @@
-<h3>Setup Team</h3>
+<h3>Manage User</h3>
 <div class="row">
     <div>
         <div class="card">
             <div class="card-header">
                 <h3 class="text-center">
-                    Team
+                    Users
                 </h3>
             </div>
             <div class="card-body">
                 <div class="d-flex justify-content-end">
-                    <button data-bs-toggle="modal" data-bs-target="#newTeam" class="btn btn-sm btn-outline-primary mb-3">
-                        <i class="mdi mdi-plus"></i>&nbsp; Add Team
+                    <button data-bs-toggle="modal" data-bs-target="#newUser" class="btn btn-sm btn-outline-primary mb-3">
+                        <i class="mdi mdi-plus"></i>&nbsp; Add User
                     </button>
-                    <livewire:admin.teams.create />
+                    <livewire:admin.users.create />
                 </div>
                 @include('includes.partials')
-                To reorder, drag any team member to the position you want.
                 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Title</th>
+                            <th>Username</th>
                             <th>E-mail</th>
-                            <th>Detail</th>
-                            <th>Image</th>
+                            <th>Date Joined</th>
                             <th>Status</th>
-                            <th>Actions</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody id="sortable-team">
-                        @foreach($teams as $team)
-                            <livewire:admin.teams.teams-detail :team="$team" :key="$team->id" />
+                    <tbody>
+                        @foreach($users as $user)
+                            <livewire:admin.users.detail :user="$user" :key="$user->id" />
                         @endforeach
                     </tbody>
                 </table>

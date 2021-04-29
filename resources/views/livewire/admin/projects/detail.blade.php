@@ -3,6 +3,10 @@
     <td>
         {{$project->subtitle}}
     </td>
+    <td>{{substr($project->detail, 0, 50)}}...............</td>
+    <td>
+        {{$project->active?'Active': 'Inactive'}}
+    </td>
     <td>
         <div class="btn-group" role="group">
             <button id="btnGroupDrop{{$project->id}}" class="btn btn-sm dropdown-toggle btn-outline-primary" data-bs-toggle="dropdown" aria-expanded="false">
