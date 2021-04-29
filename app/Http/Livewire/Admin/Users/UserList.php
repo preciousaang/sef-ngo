@@ -15,6 +15,6 @@ class UserList extends Component
 
     public function mount(User $user)
     {
-        $this->users = $user->all();
+        $this->users = $user->all()->except(auth()->id());
     }
 }
