@@ -11,6 +11,7 @@ To reorder, drag any image to the position you want.
             <th>Name</th>
             <th>Image</th>
             <td>Detail(Excerpt)</td>
+            <td>Status</td>
             <th>Actions</th>
         </tr>
     </thead>

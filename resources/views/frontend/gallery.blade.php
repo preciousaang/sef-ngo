@@ -7,7 +7,7 @@
           <h1>Gallery</h1>
           <hr>
               <div class="galley-nav mt50">
-                @if(count($images))
+                @if(count($images) && count($galleries))
                   <a href="javascript:" class="btn btn-orange filter" data-filter="all">All</a>
                   @foreach($galleries as $gallery)
                       <a href="javascript:" class="btn btn-orange filter" data-filter=".{{$gallery->id}}">{{$gallery->title}}</a>
@@ -20,6 +20,7 @@
         <div id="Container">
           <!-- <div class="row">
             <div class="col-md-6"> -->
+              @if(count($images) && count($galleries))
             @foreach($images as $image)
               <div class="mix {{$image->gallery_id}}">
                 <div class="gray-bg">
@@ -38,6 +39,7 @@
                 </div>
               </div>
             @endforeach
+            @endif
             <!-- </div> -->
           <!-- </div> -->
         </div>

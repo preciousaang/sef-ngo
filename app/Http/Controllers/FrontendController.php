@@ -17,8 +17,8 @@ class FrontendController extends Controller
 {
     public function home()
     {
-        $news = News::latest()->limit(3)->get();
-        $projects = Project::latest()->limit(15)->get();
+        $news = News::latest()->whereActive(1)->limit(3)->get();
+        $projects = Project::latest()->whereActive(1)->limit(15)->get();
         return view('frontend.home', [
             'news' => $news,
             'projects' => $projects,
@@ -46,8 +46,8 @@ class FrontendController extends Controller
 
     public function gallery()
     {
-        $images = Image::with('gallery')->orderBy('position')->get();
-        $galleries = Gallery::orderBy('position')->get();
+        $images = Image::with('gallery')->where('active', 1)->orderBy('position')->get();
+        $galleries = Gallery::where('active', 1)->orderBy('position')->get();
         return view('frontend.gallery', [
             'images' => $images,
             'galleries' => $galleries
