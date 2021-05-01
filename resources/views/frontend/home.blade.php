@@ -63,9 +63,9 @@
                                       <div class="slider-left">
                                             <h1 class="text-center" style="background-color:rgba(0,0,0, 0.3); font-weight: bold;">Milestones</h1>
                                             <hr class="o">
-                                            <p class="white mt40" style="font-size: 170%; line-height:150%; font-weight: 510; background-color: rgba(0,0,0, 0.3);">
+                                            {{-- <p class="white mt40" style="font-size: 170%; line-height:150%; font-weight: 510; background-color: rgba(0,0,0, 0.3);">
                                                 Capacity building training of 2000+ women on international best agronomic practices for maximum production, yield and quality.
-                                            </p>
+                                            </p> --}}
                                             <p class="white m40" style="font-size: 170%; line-height: 150%; font-weight: 510; background-color: rgba(0,0,0, 0.3);">
                                                     Increased capacity of shea butter processors to 20+ tons per month
                                             </p>
@@ -93,7 +93,6 @@
         <hr>
     </div>
           <div id="projects-help" class="wow slideInDown">
-              
               @foreach($projects as $project)
               <div class="item">
                   <div class="row">
@@ -101,7 +100,7 @@
                           <img class="img-responsive" src="{{asset('storage/uploads/'.$project->image_url)}}" alt="">
                       </div>
                       <div class="col-md-5">
-                          <div class="project-description">
+                          <div class="project-description" style="padding-left: 10px;">
                               <h1 class="animated fadeInUp slideInUp">{{$project->title}}</h1>
                               <hr class="small">
   
@@ -196,52 +195,6 @@
                   </div>
               </div>
           </div>
-          {{-- <div class="item">
-              <div class="row">
-                  <div class="col-md-12">
-                      <div class="find-img">
-                          <img src="img/find-us.jpg" alt="">
-                      </div>
-                      <div class="find-text text-center">
-                          <div class="spot-heading">
-                              <h1>Where to find us</h1>
-                              <h2>Locate Us.</h2>
-                          </div>
-                          <div class="find-details">
-                              <p>	Or contact us directly:</p>
-                              <a class="btn btn-white" href="index.html">Contact Us</a>
-                          </div>
-                      </div>
-                      <div class="find-quote">
-                          <p>“Loneliness and the feeling of being unwanted is the most terrible poverty.”</p>
-                          <p class="author">- A. P. J. Abdul Kalam</p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="item">
-              <div class="row">
-                  <div class="col-md-12">
-                      <div class="find-img">
-                          <img src="img/find-us.jpg" alt="">
-                      </div>
-                      <div class="find-text text-center">
-                          <div class="spot-heading">
-                              <h1>Where to find us</h1>
-                              <h2>Locate Us.</h2>
-                          </div>
-                          <div class="find-details">
-                              <p>	Or contact us directly:</p>
-                              <a class="btn btn-white" href="index.html">Contact Us</a>
-                          </div>
-                      </div>
-                      <div class="find-quote">
-                          <p>“Loneliness and the feeling of being unwanted is the most terrible poverty.”</p>
-                          <p class="author">- A. P. J. Abdul Kalam</p>
-                      </div>
-                  </div>
-              </div>
-          </div> --}}
       </div>
   </section>
   <section class="no-padding no-margin">
@@ -284,19 +237,18 @@
           <div class="blog-area">
               @forelse($news as $post)
               <div class="row">
-                  <div class="col-md-4 col-sm-6 blog-post">
-                      
-                      <h2>{{$post->title}}</h2>
+                  <div class="col-md-4 col-sm-6 blog-post" style="padding: 0 40px;">
+                      <h2 style="margin-left">{{$post->title}}</h2>
                       <div class="blog-img">
-                          <img class="img-responsive img-rounded" src="{{asset('storage/uploads/'.$post->image_url)}}" alt="{{$post->title}}">
-                          <div class="blog-img-hover text-center">
+                          <img style="width: 100%;" height="200px" class="img-rounded" src="{{asset('storage/uploads/'.$post->image_url)}}" alt="{{$post->title}}">
+                          <div style="width: 100%;" class="blog-img-hover text-center">
                               <a class="btn btn-orange" href="{{route('news-detail', $post->slug)}}">Read Article</a>
                           </div>
                       </div>
-                      <p><?= substr(strip_tags($post->body), 0, 50); ?></p>
+                      <p><?= substr(strip_tags($post->body), 0, 40); ?>...</p>
                       <div class="post-footer">
-                          <div class="post-author pull-left">
-                              <img src="img/blog/kate.jpg" alt="">
+                          <div class="post-author pull-left" style="margin-top: 8px;">
+                              <i style="color: #f79f17" class="fa fa-user"></i>
                               <span>{{$post->user->name}}</span>
                           </div>
                           <div class="post-time pull-right orange">
@@ -306,8 +258,12 @@
                       <div class="clearfix"></div>
                   </div>
                 @empty
-                @endforelse                      
+                @endforelse              
+                        
               </div>
+              <p class="text-center mt40">
+                <a class="btn btn-orange" href="{{route('news')}}">Read More News</a>
+              </p>
           </div>
       </div>
   </section>

@@ -57,7 +57,7 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="" class="col-form-label col-sm-3">Send New to all subscribers</label>
+                            <label for="" class="col-form-label col-sm-3">Send News to all subscribers</label>
                             <div class="col-sm-9">
                                 <input type="checkbox" class="form-check-input" name="checkbox">
                                 @if($errors->has('checkbox'))

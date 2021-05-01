@@ -13,11 +13,13 @@
         </div>
         <h2 style="text-align: center">SEF News Letter</h2>
         <hr>
-        <div style="width: 90%; margin: 0 auto;">
-            <img src="{{asset('storage/uploads/'.$news->image_url)}}" style="border: 1px solid black;" width="100%">
+        <div style="width: 95%; margin: 0 auto;">
+            <p style="text-align: center">
+            <img src="{{asset('storage/uploads/'.$news->image_url)}}" style="border: 1px solid black; width: 55%; margin: 2px auto;">
+            </p>
             <h3 style="text-align: center">{{$news->title}}</h3>
             <p style="text-align: center">
-                <a style="text-decoration: none; border: 1px solid black; padding: 10px; border-radius: 5px; color: black; font-size: 120%;" href="{{route('news-detail', $news->slug)}}">Read</a>
+                <a style="text-decoration: none; border: 1px solid black; padding: 10px; border-radius: 5px; color: black; font-size: 100%;" href="{{route('news-detail', $news->slug)}}">Read</a>
                 <br>
                 <br>
                 <br>

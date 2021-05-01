@@ -21,12 +21,14 @@
                         </a>
                     </div>
                     @include('includes.partials')
+                    <div class="table-responsive">
                     <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th>Title</th>
                                 <th>Author</th>
                                 <th>Excerpt</th>
+                                <th>Status</th>
                                 <th>Date Posted</th>
                                 <th>Action</th>
                             </tr>
@@ -37,6 +39,7 @@
                                 <td>{{$post->title}}</td>
                                 <td>{{$post->user->name}}</td>
                                 <td><?= substr(strip_tags($post->body), 0, 50); ?>....</td>
+                                <td>{{$post->active ? 'Active' : 'Inactive'}}</td>
                                 <td>{{$post->created_at->diffForHumans()}}</td>
                                 <td>
                                     <div class="btn-group" role="group">
@@ -45,11 +48,14 @@
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="btnGroupDrop{{$post->id}}">
                                             <li>
+                                                <a class="dropdown-item" href="{{route('admin-news-toggle-status', $post->id)}}">{{!$post->active ? 'Activate' : 'Deactivate'}}</a>
+                                            </li>
+                                            <li>
                                                 <a href="{{route('admin-news-edit', $post->id)}}" type="button" class="dropdown-item">
                                                     Edit
                                                 </a>
                                             </li>
-                                            <li><a href="{{route('admin-news-delete', $post->id)}}" onclick="return confirm('Are you sure')" class="dropdown-item">Delete</a></li>
+                                            {{-- <li><a href="{{route('admin-news-delete', $post->id)}}" onclick="return confirm('Are you sure')" class="dropdown-item">Delete</a></li> --}}
                                         </ul>
                                     </div>
                                 </td>
@@ -58,6 +64,7 @@
                             @endforelse
                         </tbody>
                     </table>
+                    </div>
                 </div>
             </div>
         </div>

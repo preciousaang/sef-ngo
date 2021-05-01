@@ -15,6 +15,7 @@
                     <livewire:admin.users.create />
                 </div>
                 @include('includes.partials')
+                <div class="table-responsive">
                 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
@@ -31,6 +32,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                </div>
             </div>
         </div>
     </div>

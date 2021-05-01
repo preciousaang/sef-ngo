@@ -217,6 +217,19 @@ class DashboardController extends Controller
         return redirect()->back()->with('success', 'Updated Successfully');
     }
 
+    public function toggleNewsStatus(Request $request)
+    {
+        $news = News::findOrFail($request->id);
+        $news->active = !$news->active;
+        $news->save();
+        if ($news->active) {
+            session()->flash('message', 'Activated Successfully');
+        } else {
+            session()->flash('message', 'Deactivated Successfully');
+        }
+        return redirect()->back();
+    }
+
     public function deleteNews($id)
     {
         $news = News::findOrFail($id);

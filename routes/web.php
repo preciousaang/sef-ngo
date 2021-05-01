@@ -74,11 +74,12 @@ Route::middleware('auth')->group(function () {
 
         Route::get('news/{id}/edit', [DashboardController::class, 'editNews'])->name('admin-news-edit');
         Route::patch('news/{id}/edit', [DashboardController::class, 'updateNews'])->name('admin-update-news');
+        Route::get('news/{id}/toggle-status', [DashboardController::class, 'toggleNewsStatus'])->name('admin-news-toggle-status');
 
-        Route::get('/news/{id}/delete', [DashboardController::class, 'deleteNews'])->name('admin-news-delete');
-        Route::get('/mailable', function () {
-            return new App\Mail\NewsLetter(App\Models\News::find(1), 'pr@mail.com');
-        });
+        // Route::get('/news/{id}/delete', [DashboardController::class, 'deleteNews'])->name('admin-news-delete');
+        // Route::get('/mailable', function () {
+        //     return new App\Mail\NewsLetter(App\Models\News::find(1), 'pr@mail.com');
+        // });
 
         // Users
         Route::get('/users', [DashboardController::class, 'users'])->name('admin-users');

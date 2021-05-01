@@ -16,6 +16,7 @@
                 </div>
                 @include('includes.partials')
                 To reorder, drag any project to the position you want.
+                <div class="table-responsive">
                 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
@@ -33,6 +34,7 @@
                         @endforelse
                     </tbody>
                 </table>
+                </div>
             </div>
         </div>
     </div>

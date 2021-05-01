@@ -5,6 +5,7 @@
     <livewire:admin.images.create />
 </div>
 To reorder, drag any image to the position you want.
+<div class="table-responsive">
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
@@ -22,3 +23,4 @@ To reorder, drag any image to the position you want.
         @endforelse
     </tbody>
 </table>
+</div>

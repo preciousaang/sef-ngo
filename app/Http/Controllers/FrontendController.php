@@ -56,7 +56,7 @@ class FrontendController extends Controller
 
     public function news()
     {
-        $news = News::latest()->paginate(20);
+        $news = News::latest()->whereActive(1)->paginate(20);
         return view('frontend.news', [
             'news' => $news,
         ]);
@@ -64,7 +64,7 @@ class FrontendController extends Controller
 
     public function newsDetail($slug)
     {
-        $news = News::whereSlug($slug)->firstOrFail();
+        $news = News::whereSlug($slug)->whereActive(1)->firstOrFail();
         return view('frontend.news-detail', [
             'post' => $news
         ]);
