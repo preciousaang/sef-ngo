@@ -62,12 +62,12 @@
               <div class="col-md-4">
                 <div class="cotact-details mb30 mt10">
                   <div class="row">
-                    <div class="col-md-5">
+                    {{-- <div class="col-md-5">
                       <i class="fa fa-map-marker orange"></i> <span class="text-bold"> Address:</span>
                     </div>
                     <div class="col-md-7">
                       <span>17, Akeem Odumosu Crescent, Magodo GRA, Lagos</span>
-                    </div>
+                    </div> --}}
                   </div>
                 </div>
                 <div class="cotact-details mb30">
@@ -87,7 +87,7 @@
                     </div>
                     <div class="col-md-7">
                       <span>+234 906 289 9919</span>
-                      <span>+234 803 517 2779</span>
+                      <span>+234 906 289 9917</span>
                     </div>
                   </div>
                 </div>

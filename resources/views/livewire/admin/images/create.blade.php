@@ -24,6 +24,7 @@
                     <label for="" class="col-form-label col-sm-3">Image</label>
                     <div class="col-sm-9">
                         <input wire:model="image" type="file" accept="image/*" class="form-control @if($errors->has('image')) is-invalid @endif">
+                        <div wire:loading wire:target="image" class="text-success">Uploading...</div>
                         @if($errors->has('image'))
                             <div class="invalid-feedback">
                                 @foreach($errors->get('image') as $error)

@@ -23,7 +23,9 @@
             <li>
                 <a href="{{route('gallery')}}">Gallery</a>
             </li>
-           
+           <li>
+               <a href="{{route('projects')}}">Projects</a>
+           </li>
             <li>
                 <a href="{{route('news')}}">News</a>
             </li>

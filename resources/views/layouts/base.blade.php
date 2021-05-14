@@ -3343,10 +3343,11 @@ ul.profile-detail > li > span{
             <div class="col-md-3 col-sm-6 contact">
                 <h2>Contact Us</h2>
                 <div class="contact-details">
-                    <span><i class="glyphicon glyphicon-map-marker white"></i></span>
-                    <p>17, Akeem Odumosu Crescent, Magodo GRA, Lagos</p>
+                    {{-- <span><i class="glyphicon glyphicon-map-marker white"></i></span> --}}
+                    {{-- <p>17, Akeem Odumosu Crescent, Magodo GRA, Lagos</p> --}}
                     <span><i class="glyphicon glyphicon-earphone white"></i></span>
-                    <p>08060334996</p>
+                    <p>+234 906 289 9919<br>+234 906 289 9917</p>
+					
                     <span><small><i class="glyphicon glyphicon-envelope white"></i></small></span>
                     <p>info@sefng.org</p>
                 </div>

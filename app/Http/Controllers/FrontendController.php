@@ -18,7 +18,7 @@ class FrontendController extends Controller
     public function home()
     {
         $news = News::latest()->whereActive(1)->limit(3)->get();
-        $projects = Project::latest()->whereActive(1)->limit(15)->get();
+        $projects = Project::latest()->whereActive(1)->limit(5)->get();
         return view('frontend.home', [
             'news' => $news,
             'projects' => $projects,
@@ -116,5 +116,14 @@ class FrontendController extends Controller
         $subscriber->delete();
         session()->flash('message', 'You have unsubscribed');
         return redirect()->route('homepage');
+    }
+
+    public function projects()
+    {
+        $projects = Project::whereActive(1)->paginate(20);
+
+        return view('frontend.projects', [
+            'projects' => $projects
+        ]);
     }
 }

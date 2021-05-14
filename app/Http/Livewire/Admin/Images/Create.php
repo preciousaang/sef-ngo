@@ -11,20 +11,21 @@ class Create extends Component
     use WithFileUploads;
 
     public $title;
-    public $image;
+    public $image = null;
     public $detail;
     public $gallery_id;
 
     protected $rules = [
         'title' => 'required|string|max:70',
-        'image' => 'required|image',
         'detail' => 'required|string',
+        'image' => 'required|image',
     ];
 
     public function render()
     {
         return view('livewire.admin.images.create');
     }
+
 
     public function addImage()
     {

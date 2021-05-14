@@ -60,7 +60,7 @@
           <div class="newsletter">
             <h1>Join Our Newsletter</h1>
             <hr>
-            <p>Africa’s Summer Newsletter 2015 is now ready for you to download and read. It’s got news about our projects in Malawi and a recent visit by two of our wonderful donors.</p>
+            <p>Be the first to get our latest news.</p>
             @include('includes.partials')
             <form action="{{route('join-newsletter')}}" method="POST">
               @csrf

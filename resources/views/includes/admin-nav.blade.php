@@ -25,6 +25,9 @@
             <a href="{{route('admin-users')}}" class="list-group-item">
                 Manage Users
             </a>
+            <a href="{{route('change-password-form')}}" class="list-group-item">
+                Change Password
+            </a>
             <a href="{{route('logout')}}" class="list-group-item">
                 Logout
             </a>

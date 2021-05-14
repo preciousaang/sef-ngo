@@ -27,6 +27,7 @@ Route::post('/newsletter', [FrontendController::class, 'joinNewsLetter'])->name(
 Route::get('/unsubscribe', [FrontendController::class, 'unsubscribeNewsLetter'])->name('unsubscribe');
 Route::get('/news', [FrontendController::class, 'news'])->name('news');
 Route::get('/news/{slug}', [FrontendController::class, 'newsDetail'])->name('news-detail');
+Route::get('/projects', [FrontendController::class, 'projects'])->name('projects');
 
 
 
