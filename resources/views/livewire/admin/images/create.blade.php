@@ -23,8 +23,22 @@
                 <div class="row mb-3">
                     <label for="" class="col-form-label col-sm-3">Image</label>
                     <div class="col-sm-9">
-                        <input wire:model="image" type="file" accept="image/*" class="form-control @if($errors->has('image')) is-invalid @endif">
-                        <div wire:loading wire:target="image" class="text-success">Uploading...</div>
+                        <div
+                            x-data="{ isUploading: false, progress: 0 }"
+                            x-on:livewire-upload-start="isUploading = true"
+                            x-on:livewire-upload-finish="isUploading = false"
+                            x-on:livewire-upload-error="isUploading = false"
+                            x-on:livewire-upload-progress="progress = $event.detail.progress"
+                        >
+                       
+                            <input wire:model="image" type="file" accept="image/*" class="form-control @if($errors->has('image')) is-invalid @endif">
+                            <div wire:loading wire:target="image" class="text-success">Uploading...</div>
+                            <!-- Progress Bar -->
+                            <div x-show="isUploading">
+                                <progress max="100" x-bind:value="progress"></progress>
+                            </div>
+                        </div>
+                        
                         @if($errors->has('image'))
                             <div class="invalid-feedback">
                                 @foreach($errors->get('image') as $error)

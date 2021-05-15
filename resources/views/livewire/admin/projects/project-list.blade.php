@@ -16,7 +16,7 @@
                 </div>
                 @include('includes.partials')
                 To reorder, drag any project to the position you want.
-                <div class="table-responsive">
+                <div class="table-responsive" style="min-height: 100vh">
                 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>

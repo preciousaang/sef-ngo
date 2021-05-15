@@ -28,7 +28,7 @@ class Edit extends Component
 
     public function mount(Image $image)
     {
-        $this->image = $image->find(request()->id);
+        $this->image = $image->findOrFail(request()->id);
         $this->title = $this->image->title;
         $this->detail = $this->image->detail;
     }

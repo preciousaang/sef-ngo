@@ -16,21 +16,24 @@
                 </div>
                 @include('includes.partials')
                 To reorder, drag any gallery to the position you want.
-                <table class="table table-striped table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody id="sortable-gallery">
-                        @forelse($galleries as $gallery)
-                            <livewire:admin.gallery.gallery-detail :gallery="$gallery" :key="$gallery->id" />
-                                @empty
-                        @endforelse
-                    </tbody>
-                </table>
+                <div class="table-responsive"  style="min-height: 100vh">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="sortable-gallery">
+                            @forelse($galleries as $gallery)
+                                <livewire:admin.gallery.gallery-detail :gallery="$gallery" :key="$gallery->id" />
+                                    @empty
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
+                
             </div>
         </div>
     </div>
